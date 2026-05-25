@@ -46,10 +46,21 @@ nav .site-branding a
     background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    /*padding-top: 10px;*/
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px;
     background-color: #404040;
+    /* Push the whole menu down using top instead of margin */
+    top: calc(100% + 10px);
+}
 
+/* Create the invisible hover bridge */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Spans the 10px gap you created */
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent; /* Invisible to the eye, but catches the mouse */
 }
 
 .dropdown-menu a {
